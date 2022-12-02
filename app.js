@@ -88,6 +88,8 @@ const App = (function (){
         if(userInput.name !== '' && userInput.calories !== ''){
             const newItem = ItemCtrl.addItem(userInput.name, userInput.calories)
             UICtrl.addListItem(newItem)
+            const totalCalories = ItemCtrl.getTotalCalories()
+            UICtrl.showTotalCalories(totalCalories)
             UICtrl.clearInput()
         }
         event.preventDefault()
